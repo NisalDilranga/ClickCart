@@ -1,0 +1,18 @@
+.hd{
+    font-size: 30px;
+    font-weight: 600;
+}
+.cart_slider-main .item1{
+  
+    height: 150px;
+    background: #ccc;
+}
+.cart_slider-main .slick-slide{
+    padding: 10px;
+}
+.card2{
+ margin: 40px 40px 20px 40px;
+
+ border: 1px solid black;
+}
+

@@ -1,0 +1,27 @@
+.slider-container{
+border: 1px solid black;
+}
+.slider1 .slick-slide{
+    border: 1px solid black;
+    padding: 20px;
+}
+.card{
+    border:  1px solid red;
+    height: 300px;
+
+}
+.card img{
+    
+    margin: 10px 100px;
+    width: 150px;
+    height: 150px;
+}
+.card h3{
+    border:  1px solid red;
+    font-size: 15px;
+    margin: 40px;
+   font-weight: 100px;
+}
+.card p{
+    
+}

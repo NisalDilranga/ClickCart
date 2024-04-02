@@ -1,0 +1,12 @@
+.banner_section{
+    margin: 20px 40px 40px 40px;
+    height: 350px;
+    display: flex;
+    justify-content: space-around;
+}
+.banner{
+    border: 1px solid rgb(0, 0, 0);
+    height: 300px;
+    width:465px ;
+    
+}
