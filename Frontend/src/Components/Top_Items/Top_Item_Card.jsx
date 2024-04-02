@@ -1,21 +1,28 @@
-
+import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React, { useState, useEffect } from 'react';
 import "./items.css";
-
 
 const Top_Item_Card = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch data when the component mounts
-    fetch('https://fakestoreapi.com/products')
-      .then(response => response.json())
-      .then(data => setProducts(data))
+    fetch('http://localhost:3000/api/products/')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch products');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setProducts(data);
+        setLoading(false);
+      })
       .catch(error => console.error('Error fetching products:', error));
   }, []);
+
   var settings = {
     infinite: true,
     slidesToShow: 5,
@@ -26,27 +33,27 @@ const Top_Item_Card = () => {
   };
 
   return (
-    <>
- <div className="cat_cart">
-    <div className="card2">
-      <Slider {...settings} className="cart_slider-main">
-      {products.map(product => (
-              <div key={product.id}>
+    <div className="cat_cart">
+      <div className="card2">
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <Slider {...settings} className="cart_slider-main">
+            {products.map(product => (
+              <div key={product._id}>
                 <div className="card">
-                  <img src={product.image} alt={product.title} />
-                  <h3>{product.title}</h3>
-                  <p>${product.price}</p>
+                  <img src={product.images}  />
                   
+                  <p>${product.price}</p>
                   {/* Add more details as needed */}
                 </div>
               </div>
             ))}
-      </Slider>
-
+          </Slider>
+        )}
+      </div>
     </div>
-   </div>
-    </>
-  )
+  );
 }
 
-export default Top_Item_Card
+export default Top_Item_Card;
