@@ -54,6 +54,7 @@ header {
   position: relative;
   bottom: -5px;
   left: 11px;
+ color: black;
 }
 .icon_l span {
   color: red;

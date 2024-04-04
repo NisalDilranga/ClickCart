@@ -1,13 +1,14 @@
 import React from 'react';
+
 import Login from '../Components/Login/Login';
 
-const About = () => {
+const signin = () => {
   return (
-   <>
-   <Login/>
-   
-   </>
+    <>
+    <Login/>
+    
+    </>
   )
 }
 
-export default About
+export default signin

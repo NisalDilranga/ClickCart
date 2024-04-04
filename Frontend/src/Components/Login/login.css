@@ -1,0 +1,53 @@
+.sign-in{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-l);
+ 
+    min-height: 80svh;
+    padding-top: 100px;
+  }
+  .policies{
+    display: flex;
+    gap: var(--sp-s);
+  }
+  .login-policy-link,
+.signup-btn{
+  color: blue;
+  text-decoration: underline;
+  font-size: var(--fs-m);
+}
+.email-pass{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  .email-pass input{
+    border: none;
+    padding: 10px 20px;
+    box-shadow: var(--bx-s-2);
+    border-radius: 6px;
+    cursor: pointer;
+    width: 300px;
+    height: 50px;
+    font-size: 16px;
+  }
+  .email-pass input:last-child{
+    background-color: var(--c-p);
+    color: white;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  .email-pass input:last-child:active{
+    scale: .9;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .login-policy-link{
+      font-size: var(--fs-s);
+    }
+    .email-pass input:not(:last-child){
+      border: 1px solid var(--c-s);
+    }
+  }

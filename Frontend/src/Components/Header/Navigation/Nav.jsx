@@ -1,5 +1,6 @@
 import React from "react";
 import { FaUserAlt, FaShoppingCart, FaSearch ,  FaHome } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
 const Nav = () => {
@@ -15,12 +16,19 @@ const Nav = () => {
             <FaSearch className="icons" />
           </div>
           <div className="icon">
-          <div className="icon_l">
+          {/* <div className="icon_l">
               <FaHome className="i" />
-            </div>
-            <div className="icon_l">
+            </div> */}
+            <Link to='/' className="icon_l" >
+            <FaHome className="i" />
+            </Link>
+            {/* <div className="icon_l">
               <FaUserAlt className="i" />
-            </div>
+            </div> */}
+            <Link to='/login' className="icon_l" >
+            <FaUserAlt className="i" />
+            </Link>
+           
             <div className="icon_l">
               <FaShoppingCart className="i" />
               <span>0</span>
