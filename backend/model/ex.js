@@ -1,5 +1,3 @@
-const mongoose = require("mongoose");
-
 const productsSchema = new mongoose.Schema(
     {
         _id:{
@@ -19,8 +17,12 @@ const productsSchema = new mongoose.Schema(
             required: true // Make price required
         },
         category: {
-            type: String,
-            unique: true // Ensure category names are unique
+
+            Name:{
+                type: String
+            }
+            // type: String,
+            // unique: true // Ensure category names are unique
         },
         images: {
             type: [String] // Array of image URLs
@@ -31,7 +33,3 @@ const productsSchema = new mongoose.Schema(
         }
     }
 );
-
-module.exports = mongoose.model('product', productsSchema);
-
-
