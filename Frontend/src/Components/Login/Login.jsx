@@ -3,6 +3,7 @@ import "./login.css";
 import { Link } from 'react-router-dom';
 
 
+
 const Login = () => {
   return (
     
@@ -17,7 +18,7 @@ const Login = () => {
         </form>
        </div>
        <div className="signUp">
-        Don't have an account? <Link className='signup-btn' to={"/"}>Sign Up</Link>
+        Don't have an account? <Link className='signup-btn' to={"/Register"}>Sign Up</Link>
       </div>
       <div className="signUp">
         <Link className='signup-btn' to={"/"}>Forgot Password?</Link>
