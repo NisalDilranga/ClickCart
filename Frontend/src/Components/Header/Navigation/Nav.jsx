@@ -1,9 +1,29 @@
 import React from "react";
 import { FaUserAlt, FaShoppingCart, FaSearch ,  FaHome } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
+
+function isAuthenticated() {
+  return !!localStorage.getItem('token');
+}
+
 
 
 const Nav = () => {
+  const navigate = useNavigate();
+
+  const handleUserIconClick = () => {
+    if (isAuthenticated()) {
+      navigate('/about'); // Update this to your user profile route
+    } else {
+      navigate('/login');
+    }
+  };
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/login');
+  };
+  
+
   return (
     <>
       <header>
@@ -25,9 +45,12 @@ const Nav = () => {
             {/* <div className="icon_l">
               <FaUserAlt className="i" />
             </div> */}
-            <Link to='/login' className="icon_l" >
+            {/* <Link to='/login' className="icon_l" >
             <FaUserAlt className="i" />
-            </Link>
+            </Link> */}
+            <div onClick={handleUserIconClick} className="icon_l">
+              <FaUserAlt className="i" />
+            </div>
            
             <div className="icon_l">
               <FaShoppingCart className="i" />

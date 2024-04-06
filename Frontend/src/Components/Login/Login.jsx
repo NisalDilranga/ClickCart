@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import "./login.css";
-import { Link  } from 'react-router-dom';
+import { Link, useNavigate   } from 'react-router-dom';
 import axios from 'axios';
-import Alert from 'react-bootstrap/Alert';
+
+
+
 
 
 
@@ -11,8 +13,9 @@ import Alert from 'react-bootstrap/Alert';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
   // const [alertMessage, setAlertMessage] = useState('');
-  
+ 
 
   const handleLogin = async (e) => {
     e.preventDefault(); 
@@ -21,6 +24,7 @@ try {
   localStorage.setItem('token', response.data.token);
   // setAlertMessage('Logged in successfully!');
   alert('Logged in successfully!');
+  navigate('/');
 } catch (error) {
   console.error('Login error:', error);
   // setAlertMessage('Login failed: Incorrect username or password');
@@ -28,6 +32,7 @@ try {
 }
 
   }
+
   return (
     
  <>
