@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import "./login.css";
 import { Link, useNavigate   } from 'react-router-dom';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 
 
@@ -21,8 +22,12 @@ const Login = () => {
     e.preventDefault(); 
 try {
   const response = await axios.post('http://localhost:3000/api/login', { email, password });
-  localStorage.setItem('token', response.data.token);
+  
+  // localStorage.setItem('token', response.data.token);
   // setAlertMessage('Logged in successfully!');
+  //  Set the token in a cookie instead of local storage
+  const token = response.data.token;
+  Cookies.set('token', token, { expires: 1/24/2 });
   alert('Logged in successfully!');
   navigate('/');
 } catch (error) {

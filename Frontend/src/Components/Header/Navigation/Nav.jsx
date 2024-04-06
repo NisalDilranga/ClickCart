@@ -1,9 +1,13 @@
-import React from "react";
+
 import { FaUserAlt, FaShoppingCart, FaSearch ,  FaHome } from "react-icons/fa";
 import { Link,  useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+import React, { useEffect } from 'react';
+
 
 function isAuthenticated() {
-  return !!localStorage.getItem('token');
+  // return !!localStorage.getItem('token');
+  return !!Cookies.get('token');
 }
 
 
@@ -18,11 +22,14 @@ const Nav = () => {
       navigate('/login');
     }
   };
+  // const handleLogout = () => {
+  //   localStorage.removeItem('token');
+  //   navigate('/login');
+  // };
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    Cookies.remove('token');
     navigate('/login');
   };
-  
 
   return (
     <>
