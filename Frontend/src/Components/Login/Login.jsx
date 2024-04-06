@@ -1,20 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./login.css";
-import { Link } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
+import axios from 'axios';
+import Alert from 'react-bootstrap/Alert';
+
+
 
 
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  // const [alertMessage, setAlertMessage] = useState('');
+  
+
+  const handleLogin = async (e) => {
+    e.preventDefault(); 
+try {
+  const response = await axios.post('http://localhost:3000/api/login', { email, password });
+  localStorage.setItem('token', response.data.token);
+  // setAlertMessage('Logged in successfully!');
+  alert('Logged in successfully!');
+} catch (error) {
+  console.error('Login error:', error);
+  // setAlertMessage('Login failed: Incorrect username or password');
+  alert('Login failed: Incorrect username or password');
+}
+
+  }
   return (
     
  <>
   <div className="sign-in">
+  {/* {alertMessage && <div className="alert-message">{alertMessage}</div>} */}
       <h1>SIGN IN</h1>
       <div className="sign-in-btn-wrapper">
-        <form className="email-pass">
-          <input type="email" name="email"  placeholder='email' required onChange={e => setLoginEmail(e.target.value)}/>
-          <input type="password" name="password" placeholder='password' required onChange={e => setLoginPass(e.target.value)}/>
-          <input type="submit" value="SIGN IN" onClick={""}/>
+        <form className="email-pass" onSubmit={handleLogin}>
+          <input type="email" name="email"  placeholder='email' required onChange={e => setEmail(e.target.value)}/>
+          <input type="password" name="password" placeholder='password' required onChange={e => setPassword(e.target.value)}/>
+          <input type="submit" value="SIGN IN" />
         </form>
        </div>
        <div className="signUp">
