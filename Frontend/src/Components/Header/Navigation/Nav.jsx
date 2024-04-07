@@ -17,7 +17,7 @@ const Nav = () => {
 
   const handleUserIconClick = () => {
     if (isAuthenticated()) {
-      navigate('/about'); // Update this to your user profile route
+      navigate('/Profile'); // Update this to your user profile route
     } else {
       navigate('/login');
     }
