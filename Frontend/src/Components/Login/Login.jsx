@@ -49,7 +49,7 @@ try {
         Don't have an account? <Link className='signup-btn' to={"/Register"}>Sign Up</Link>
       </div>
       <div className="signUp">
-        <Link className='signup-btn' to={"/"}>Forgot Password?</Link>
+        <Link className='signup-btn' to={"/reset-password"}>Forgot Password?</Link>
       </div>
       <div className="hr-tag"></div>
       <div className="policies">

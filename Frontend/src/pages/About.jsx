@@ -1,6 +1,6 @@
 import React from 'react';
-import Profile from '../Components/UserProfile/Profile';
 
+import SendEmail from '../Components/FroggetPass/SendEmail';
 
 
 
@@ -8,7 +8,7 @@ const About = () => {
   return (
    <>
  
-<Profile/>
+<SendEmail/>
   
    </>
   )

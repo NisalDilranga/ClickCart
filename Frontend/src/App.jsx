@@ -6,7 +6,8 @@ import About from './pages/About';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 import Profile from './Components/UserProfile/Profile';
-
+import SendEmail from './Components/FroggetPass/SendEmail';
+import RePassword from './Components/FroggetPass/RePassword';
 function App() {
  
   
@@ -21,6 +22,8 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/Register" element={<Register/>} />
           <Route path="/Profile" element={<Profile/>} />
+          <Route path="/reset-password" element={<SendEmail/>} />
+          <Route path="/reset-pass" element={<RePassword/>} />
           {/* <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} /> */}
