@@ -45,7 +45,7 @@ router.post('/login', async (req, res) => {
     console.log("login");
   } catch (error) {
     console.error(`Login error: ${error.message}`);
-    res.status(500).json({ message: 'Server error during login' });
+    res.status(500).json({ message: 'Server error during login' }); 
   }
 });
 
@@ -54,7 +54,7 @@ router.post('/login', async (req, res) => {
 // Logout endpoint
 router.post('/logout', (req, res) => {
   // Inform the client to clear the token from storage
-  res.status(200).send({ message: 'Logged out successfully' });
+  res.status(200).send({ message: 'Logged out successfully' }); 
 });
 
 
